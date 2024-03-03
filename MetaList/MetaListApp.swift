@@ -11,7 +11,9 @@ import SwiftUI
 struct MetaListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                ListView()
+            }
         }
     }
 }
