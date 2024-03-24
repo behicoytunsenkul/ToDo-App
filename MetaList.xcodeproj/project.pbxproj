@@ -17,6 +17,10 @@
 		7241E9A82B94E50500562DA6 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241E9A72B94E50500562DA6 /* ListRowView.swift */; };
 		7241E9AA2B94EE5A00562DA6 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241E9A92B94EE5A00562DA6 /* AddView.swift */; };
 		7241E9AD2B94F27600562DA6 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241E9AC2B94F27600562DA6 /* ItemModel.swift */; };
+		727B7E052B9A2E2D006BF8AC /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727B7E042B9A2E2D006BF8AC /* ListViewModel.swift */; };
+		727B7E092B9A48BA006BF8AC /* AsistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727B7E082B9A48BA006BF8AC /* AsistantView.swift */; };
+		727B7E0B2B9A4B4D006BF8AC /* EmptyItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727B7E0A2B9A4B4D006BF8AC /* EmptyItemsView.swift */; };
+		728290322BA361F20045037B /* SendingMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728290312BA361F20045037B /* SendingMail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,11 @@
 		7241E9A72B94E50500562DA6 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		7241E9A92B94EE5A00562DA6 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		7241E9AC2B94F27600562DA6 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		727B7E042B9A2E2D006BF8AC /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		727B7E082B9A48BA006BF8AC /* AsistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsistantView.swift; sourceTree = "<group>"; };
+		727B7E0A2B9A4B4D006BF8AC /* EmptyItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyItemsView.swift; sourceTree = "<group>"; };
+		728290312BA361F20045037B /* SendingMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMail.swift; sourceTree = "<group>"; };
+		72C8B5E82BA0E7620073A36A /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +109,9 @@
 		7241E9792B94C86000562DA6 /* MetaList */ = {
 			isa = PBXGroup;
 			children = (
+				72C8B5E62BA0E71A0073A36A /* Storage */,
+				72C8B5E32BA0E5930073A36A /* Service */,
+				727B7E032B9A2E14006BF8AC /* ViewModels */,
 				7241E9AB2B94F20E00562DA6 /* Models */,
 				7241E9A42B94C90600562DA6 /* Views */,
 				7241E97A2B94C86000562DA6 /* MetaListApp.swift */,
@@ -140,6 +152,9 @@
 				7241E9A52B94C92400562DA6 /* ListView.swift */,
 				7241E9A72B94E50500562DA6 /* ListRowView.swift */,
 				7241E9A92B94EE5A00562DA6 /* AddView.swift */,
+				727B7E082B9A48BA006BF8AC /* AsistantView.swift */,
+				727B7E0A2B9A4B4D006BF8AC /* EmptyItemsView.swift */,
+				728290312BA361F20045037B /* SendingMail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +165,29 @@
 				7241E9AC2B94F27600562DA6 /* ItemModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		727B7E032B9A2E14006BF8AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				727B7E042B9A2E2D006BF8AC /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		72C8B5E32BA0E5930073A36A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		72C8B5E62BA0E71A0073A36A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				72C8B5E82BA0E7620073A36A /* items.json */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +322,13 @@
 			files = (
 				7241E9AD2B94F27600562DA6 /* ItemModel.swift in Sources */,
 				7241E9AA2B94EE5A00562DA6 /* AddView.swift in Sources */,
+				727B7E052B9A2E2D006BF8AC /* ListViewModel.swift in Sources */,
+				727B7E0B2B9A4B4D006BF8AC /* EmptyItemsView.swift in Sources */,
+				728290322BA361F20045037B /* SendingMail.swift in Sources */,
 				7241E97B2B94C86000562DA6 /* MetaListApp.swift in Sources */,
 				7241E9A62B94C92400562DA6 /* ListView.swift in Sources */,
 				7241E9A82B94E50500562DA6 /* ListRowView.swift in Sources */,
+				727B7E092B9A48BA006BF8AC /* AsistantView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

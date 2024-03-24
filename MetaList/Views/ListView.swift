@@ -9,38 +9,62 @@ import SwiftUI
 
 struct ListView: View {
     
+    @EnvironmentObject var listViewModel: ListViewModel
+    @State private var isDarkMode = false
+    @State private var showingSettings = false
     
-    @State private var isDarkMode = false;
-    @State var items: [ItemModel] = [
-        ItemModel(title: "This is the first title", isCompleted: false),
-        ItemModel(title: "This is the second", isCompleted: true),
-        ItemModel(title: "Third!", isCompleted: false)
-    ]
     var body: some View {
-        List{
-            ForEach(items) { item in
-                ListRowView(item: item)
+        ZStack {
+            if listViewModel.items.isEmpty {
+                EmptyItemsView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
+            } else {
+                List{
+                    ForEach(listViewModel.items) { item in
+                        ListRowView(item: item)
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    listViewModel.updateItemStatus(item: item)
+                                }
+                            }
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform: listViewModel.moveItem)
+                }
+                .listStyle(PlainListStyle())
+
             }
         }
-        .listStyle(PlainListStyle())
         .navigationTitle("MetaList 🚀")
         .navigationBarItems(leading:
-            HStack {
-                EditButton()
-            Button(action: {
-                isDarkMode.toggle()
-            }) {
-                Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
-                    .imageScale(.large)
-            }
-            },
-            trailing:
-                NavigationLink(destination: AddView()) {
-                    Text("Add")
-                }
-        ).preferredColorScheme(isDarkMode ? .dark : .light)
+                                HStack {
+                                    Button(action: {
+                                        isDarkMode.toggle()
+                                    }) {
+                                        Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
+                                            .imageScale(.large)
+                                    }
+                                    EditButton()
+                                    
+                                },
+                            trailing:
+                                HStack {
+                                    NavigationLink(destination: AddView()) {
+                                        Text("Add")
+                                    }
+                                    NavigationLink(destination: AsistantView()) {
+                                        HStack {
+                                            Image(systemName: "message.fill")
+                                        }
+                                    }                                    
+                                    NavigationLink(destination: SendingMail()) {
+                                        HStack {
+                                            Image(systemName: "pencil.line")
+                                        }
+                                    }
 
-        
+                                                        })
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 struct ListView_Previews: PreviewProvider {
@@ -48,6 +72,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }
 

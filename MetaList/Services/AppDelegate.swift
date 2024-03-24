@@ -1,18 +1,14 @@
-//
-//  AppDelegate.swift
-//  MetaList
-//
-//  Created by Oytun Şenkul on 9.03.2024.
-//
+import UIKit
+import UserNotifications
 
-import SwiftUI
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-struct AppDelegate: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    var notificationService = NotificationService.shared
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        notificationService.start()
+        return true
     }
-}
-
-#Preview {
-    AppDelegate()
+    
 }
