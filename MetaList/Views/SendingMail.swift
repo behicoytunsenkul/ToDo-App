@@ -53,7 +53,7 @@ struct SendingMail: View {
     
     private func sendMail() {
         // Gerekli verileri al
-        let recipientEmail = "metamindevolution@gmail.com"
+        let recipientEmail = "tmp@gmail.com"
         let subject = selectedOption
         let body = "\(title)\n\n\(bodyText)"
         

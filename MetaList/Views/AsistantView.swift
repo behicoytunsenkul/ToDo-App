@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AsistantView: View {
     var body: some View {
-        Text("MetaNova Asistant Coming Soon with MetaList v2")
+        Text("GPT COMMING SOON!")
     }
 }
 

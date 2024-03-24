@@ -35,7 +35,7 @@ struct ListView: View {
 
             }
         }
-        .navigationTitle("MetaList 🚀")
+        .navigationTitle("ToDo 🚀")
         .navigationBarItems(leading:
                                 HStack {
                                     Button(action: {
